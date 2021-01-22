@@ -22,17 +22,15 @@
     <br>
     <br>
         <div class="pros" id="pros">
-        +69 gay
+        + placeholder
         <br>
-        +cock
+        + placeholder
         </div>
 
         <br>
     
         <div class="cons" id="cons">
-        -420% damage penalty
-        <br>
-        Penis privilege is lost
+        - placeholder
         <br>
         No random critical hits
         </div>
@@ -124,6 +122,9 @@
                 cons += "This weapon has increased bullet spread<br>";
             }
         }
+		if (Math.random() < 0.05) {
+			cons += "No random critical hits<br>";
+		}
         
         document.getElementById('pros').innerHTML = pros;
         document.getElementById('cons').innerHTML = cons;

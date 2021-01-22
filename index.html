@@ -80,6 +80,14 @@
                 cons += "-" + Math.ceil(Math.random() * 50) + "% movement speed while active<br>";
             }
         }
+        if (Math.random() < 0.25) {
+            if (Math.random() < 0.5) {
+                pros += "+" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
+            }
+            else {
+                cons += "-" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
+            }
+        }
         if (Math.random() < 1.2) {
             if (Math.random() < 0.1) {
                 pros += "On hit: +" + Math.ceil(Math.random() * 300) + " health<br>";

@@ -1,0 +1,116 @@
+/* -----
+
+// COLOR PALETTES
+
+031AAD - Dark blue
+FA6B37 - Orangey
+1D3AFA - Blue
+69FA05 - Lime
+4EAD0C - Dark Green
+
+8939CC - Purple
+8A7799 - Desaturated Purple
+6263FF - Lake Blue
+FFE4A1 - Sandstorm-ey yellow
+CC9439 - Dark Sandstorm-ey Yellow
+A3762E - Darker Sandstorm-ey Yellow
+
+463EB3 - Dark Blue
+948CFF - Light Blue
+7D74FF - Light Lake Blue
+FFE973 - Sandstorm-ey yellow
+B39E2D - Dark Sandstorm-ey Yellow
+
+// REMOVED CODE (which might be handy)
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+font-family: Verdana, ABeeZee, sans-serif;
+
+// GOOD FONTS
+
+    ABeeZee
+    Actor
+    Aclonica
+    Alata
+    Armata
+
+   ----- */
+
+// --------- Classes ---------
+@font-face { font-family: tf2build; src: url(font/tf2build.ttf); } 
+@font-face { font-family: tf2secondary; src: url(font/tf2secondary.ttf); } 
+
+.main {
+    text-align: center;
+    position: relative;
+    
+    margin: 0;
+    padding: 0;
+    
+    background-color: #2E2B2A;
+        
+    //background:url(img/got_demo.png) no-repeat;
+    //background-size: cover;
+}
+
+.image {
+    //width: 100%;
+    //height: 100%;
+    //object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    //width: 100%;
+}
+
+.title {
+    font-size: 1.2vw;
+    font-weight: 2;
+    font-family: tf2build;
+    text-align:start;
+    
+    color: #FFD700;
+    position: absolute;
+    
+     //top: 33%;
+  //left: 50%;
+  //transform: translate(-50%, -50%);
+    
+    top: 6.2vw;
+    left: 46vw;
+}
+
+.pros {
+    font-size: .8vw;
+    font-weight: 2;
+    font-family: tf2secondary;
+    text-align: center;
+    
+    color: #99CCFF;
+    //position:relative;
+    //top: 10.5vw;
+    //left: 46vw;
+}
+
+.cons {
+    font-size: .8vw;
+    font-weight: 2;
+    font-family: tf2secondary;
+    text-align: center;
+    
+    color: #FF4040;
+    //position: absolute;
+    //top: 15.5vw;
+    //left: 46vw;
+}
+
+// --------- IDs ---------
+
+#align-right {
+    padding-left: 180px;
+}

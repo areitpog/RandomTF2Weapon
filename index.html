@@ -34,7 +34,6 @@
     
     <!---->
     <script>
-        
         // var Math.random();
         var pros = "";
         var cons = "";
@@ -200,11 +199,15 @@
                         }
                     }
                     if (Math.random() < 0.25) {
-                        if (Math.random() < 0.5) {
+                        var r = Math.random();
+                        if (r < 0.33) {
                             pros += "-" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
                         }
-                        else {
+                        else if (r >= 0.33 && r < 0.66) {
                             cons += "+" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
+                        }
+                        else {
+                            cons += "Own projectiles kill you instantly<br>";
                         }
                     }
                     if (Math.random() < 0.25) {
@@ -246,11 +249,11 @@
                     }
                     if (Math.random() < 0.25) {
                         if (Math.random() < 0.5) {
-                            pros += "+3 health regeneration per second<br>";
+                            pros += "+3 health regeneration per second on wearer<br>";
                         }
-                        else {
-                            cons += "Own projectiles kill you instantly<br>";
-                        }
+                    }
+                    if (Math.random() < 0.05) {
+                        cons += "No random critical hits<br>";
                     }
 
                 break;

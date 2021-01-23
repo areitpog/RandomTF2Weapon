@@ -15,7 +15,7 @@
     
     <div class="container">
     
-    <img src='img/got_scout.png' class='image' alt='...'/>
+    <img src='img/got_scout.png' class='image' id='image' alt='...'/>
    
     <div class="title">
     Refresh to generate more
@@ -24,13 +24,10 @@
     <br>
         <div class="pros" id="pros">
         </div>
-
-        <br>
-    
         <div class="cons" id="cons">
-        No random critical hits
         </div>
-    
+        <div class="info" id="info">
+        </div>
     </div>
     
     </div>
@@ -41,102 +38,229 @@
         // var Math.random();
         var pros = "";
         var cons = "";
+        var info = "";
         
-        if (Math.random() < 0.25) {
-            if (Math.random() < 0.5) {
-                pros += "+" + Math.ceil(Math.random() * 10) * 10 + "% damage bonus<br>";
-            }
-            else {
-                cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% damage penalty<br>";
-            }
-        }
-        if (Math.random() < 0.25) {
-            if (Math.random() < 0.5) {
-                pros += "+" + Math.ceil(Math.random() * 10) * 10 + "% firing speed<br>";
-            }
-            else {
-                cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% firing speed<br>";
-            }
-        }
-        if (Math.random() < 0.25) {
-            if (Math.random() < 0.5) {
-                pros += "+" + Math.ceil(Math.random() * 100) + "% clip size<br>";
-            }
-            else {
-                cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% clip size<br>";
-            }
-        }
-        if (Math.random() < 0.25) {
-            if (Math.random() < 0.5) {
-                pros += "+" + Math.ceil(Math.random() * 100) + "% movement speed on wearer<br>";
-            }
-            else {
-                cons += "-" + Math.celi(Math.random() * 100) + "% movement speed on wearer<br>"
-            }
-        }
-        if (Math.random() < 0.25) {
-            if (Math.random() < 0.5) {
-                pros += "+" + Math.ceil(Math.random() * 50) + "% movement speed while active<br>";
-            }
-            else {
-                cons += "-" + Math.ceil(Math.random() * 50) + "% movement speed while active<br>";
-            }
-        }
-        if (Math.random() < 0.25) {
-            if (Math.random() < 0.5) {
-                pros += "+" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
-            }
-            else {
-                cons += "-" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
-            }
-        }
-        if (Math.random() < 1.2) {
-            if (Math.random() < 0.1) {
-                pros += "On hit: +" + Math.ceil(Math.random() * 300) + " health<br>";
-            }
-        }
-        if (Math.random() < 1.2) {
-            if (Math.random() < 0.1) {
-                pros += "On hit: +" + Math.ceil(Math.random() * 100) + " ammo<br>";
-            }
-        }
-        if (Math.random() < 0.1) {
-            switch (Math.floor(Math.random() * 5)) {
+        while (pros === "" || cons === "") {
+        
+            pros = "";
+            cons = "";
+            var rand = Math.floor(Math.random() * 2);
+
+            switch (rand) {
+
                 case 0:
-                    pros += "On hit: cover enemy in Jarate<br>";
-                    break;
+                    document.getElementById('image').src = "img/got_scout.png"
+                    
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 10) * 10 + "% damage bonus<br>";
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% damage penalty<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 10) * 10 + "% firing speed<br>";
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% firing speed<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 100) + "% clip size<br>";
+                        }
+                        else {
+                            cons += "-" + (Math.ceil(Math.random() * 33) * 3 + 1) + "% clip size<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 100) + "% movement speed on wearer<br>";
+                        }
+                        else {
+                            cons += "-" + Math.celi(Math.random() * 100) + "% movement speed on wearer<br>"
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 50) + "% movement speed while active<br>";
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 50) + "% movement speed while active<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "-" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
+                        }
+                        else {
+                            cons += "+" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
+                        }
+                    }
+                    if (Math.random() < 1.2) {
+                        if (Math.random() < 0.1) {
+                            pros += "On hit: +" + Math.ceil(Math.random() * 300) + " health<br>";
+                        }
+                    }
+                    if (Math.random() < 1.2) {
+                        if (Math.random() < 0.1) {
+                            pros += "On hit: +" + Math.ceil(Math.random() * 100) + " ammo<br>";
+                        }
+                    }
+                    if (Math.random() < 0.1) {
+                        switch (Math.floor(Math.random() * 5)) {
+                            case 0:
+                                pros += "On hit: cover enemy in Jarate<br>";
+                                break;
+                            case 1:
+                                pros += "On hit: cover enemy in Mad Milk<br>";
+                                break;
+                            case 2:
+                                pros += "On hit: make enemy bleed<br>";
+                                break;
+                            case 3:
+                                pros += "On hit: guaranteed crits against cloaked spies<br>";
+                                break;
+                            case 4:
+                                pros += "On hit: guaranteed mini-crits<br>";
+                                break;
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "This weapon has decreased bullet spread<br>";
+                        }
+                        else {
+                            cons += "This weapon has increased bullet spread<br>";
+                        }
+                    }
+                    if (Math.random() < 0.05) {
+                        cons += "No random critical hits<br>";
+                    }
+
+                    if (Math.random() < 0.05) {
+                        info += "Weapon has increased knockback<br>on the target and the user<br>";
+                    }
+                    if (Math.random() < 0.05) {
+                        info += "This weapon reloads its entire clip at once<br>";
+                    }
+                    if (Math.random() < 0.05) {
+                        info += "Alt-fire: reach and shove someone!<br>";
+                    }
+
+                break;
+
                 case 1:
-                    pros += "On hit: cover enemy in Mad Milk<br>";
-                    break;
-                case 2:
-                    pros += "On hit: make enemy bleed<br>";
-                    break;
-                case 3:
-                    pros += "On hit: cloaked spies are Jarate'd<br>";
-                    break;
-                case 4:
-                    pros += "On hit: guaranteed mini-crits<br>";
-                    break;
+                    document.getElementById('image').src = "img/got_soldier.png"
+
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 10) * 10 + "% damage bonus<br>";
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% damage penalty<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 10) * 10 + "% firing speed";
+                            if (Math.random() < 0.25) {
+                                pros += " when airborne";
+                            }
+                            pros += "<br>"
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% firing speed<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 100) + "% clip size<br>";
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 10) * 10 + "% clip size<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 100) + "% movement speed on wearer<br>";
+                        }
+                        else {
+                            cons += "-" + Math.celi(Math.random() * 100) + "% movement speed on wearer<br>"
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 50) + "% movement speed while active<br>";
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 50) + "% movement speed while active<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "-" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
+                        }
+                        else {
+                            cons += "+" + Math.ceil(Math.random() * 50) + "% self-inflicted damage on wearer<br>";
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+" + Math.ceil(Math.random() * 50)*2 + "% projectile speed<br>";
+                        }
+                        else {
+                            cons += "-" + Math.ceil(Math.random() * 50)*2 + "% projectile speed<br>";
+                        }
+                    }
+                    if (Math.random() < 1.2) {
+                        if (Math.random() < 0.1) {
+                            pros += "On hit: +" + Math.ceil(Math.random() * 300) + " health<br>";
+                        }
+                    }
+                    if (Math.random() < 1.2) {
+                        if (Math.random() < 0.1) {
+                            pros += "On hit: +" + Math.ceil(Math.random() * 100) + " ammo<br>";
+                        }
+                    }
+                    if (Math.random() < 0.1) {
+                        switch (Math.floor(Math.random() * 5)) {
+                            case 0:
+                                pros += "On hit: cover enemy in Jarate<br>";
+                                break;
+                            case 1:
+                                pros += "On hit: cover enemy in Mad Milk<br>";
+                                break;
+                            case 2:
+                                pros += "On hit: make enemy bleed<br>";
+                                break;
+                            case 3:
+                                pros += "On hit: guaranteed mini-crits against cloaked spies<br>";
+                                break;
+                            case 4:
+                                pros += "On hit: guaranteed mini-crits<br>";
+                                break;
+                        }
+                    }
+                    if (Math.random() < 0.25) {
+                        if (Math.random() < 0.5) {
+                            pros += "+3 health regeneration per second<br>";
+                        }
+                        else {
+                            cons += "Own projectiles kill you instantly<br>";
+                        }
+                    }
+
+                break;
+
             }
-        }
-        if (Math.random() < 0.25) {
-            if (Math.random() < 0.5) {
-                pros += "This weapon has decreased bullet spread<br>";
-            }
-            else {
-                cons += "This weapon has increased bullet spread<br>";
-            }
-        }
-		if (Math.random() < 0.05) {
-			cons += "No random critical hits<br>";
-		}
-        
-        if (pros == "" && cons == "") {
-            cons = "No random critical hits<br>";
         }
         
         document.getElementById('pros').innerHTML = pros;
         document.getElementById('cons').innerHTML = cons;
+        document.getElementById('info').innerHTML = info;
         
     </script>
 
